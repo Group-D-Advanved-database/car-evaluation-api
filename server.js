@@ -30,7 +30,7 @@ app.get('/products', (req, res) => {
   ]);
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000');
-  console.log('Swagger documentation is available at http://localhost:3000/api-docs');
+app.listen(3001, () => {
+  console.log('Server is running on http://localhost:3001');
+  console.log('Swagger documentation is available at http://localhost:3001/api-docs');
 });
