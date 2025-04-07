@@ -1,18 +1,18 @@
 const fs = require('fs');
 const csv = require('csv-parser');
-const { Pool } = require('pg'); // ✅ Correct import
+const { Pool } = require('pg'); 
 
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'car_evaluation',
-  password: 'Cmp129923.', // 🔑 Update this to your actual password
+  password: 'Cmp129923.', // 
   port: 5432,
 });
 
 const results = [];
 
-fs.createReadStream('car.data.csv') // Make sure this path is correct
+fs.createReadStream('car.data.csv') 
   .pipe(csv({ headers: ['buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety', 'class'], separator: ',' }))
   .on('data', (data) => results.push(data))
   .on('end', async () => {
